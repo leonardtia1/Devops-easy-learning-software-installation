@@ -35,8 +35,8 @@ else
         sudo systemctl daemon-reload
         systemctl start jenkins 
         systemctl enable jenkins
-        firewall-cmd --permanent --add-port=8080/tcp   2& > /dev/null 
-        firewall-cmd --reload 2& > /dev/null
+        firewall-cmd --permanent --add-port=8080/tcp || true  2& > /dev/null 
+        firewall-cmd --reload || true 2& > /dev/null
         systemctl status jenkins 
     ;;
     Amazon)
@@ -48,8 +48,8 @@ else
         sudo systemctl daemon-reload
         systemctl start jenkins 
         systemctl enable jenkins
-        firewall-cmd --permanent --add-port=8080/tcp   2& > /dev/null   
-        firewall-cmd --reload 2& > /dev/null
+        firewall-cmd --permanent --add-port=8080/tcp || true  2& > /dev/null   
+        firewall-cmd --reload || true 2& > /dev/null
         systemctl status jenkins 
     ;;
     *)
